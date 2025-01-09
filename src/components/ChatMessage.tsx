@@ -11,12 +11,11 @@ const ChatMessage = ({ message, isAi = false }: ChatMessageProps) => {
     <div
       className={cn(
         "p-4 rounded mb-4 text-primary border border-primary/20",
-        isAi ? "bg-accent" : "bg-muted",
-        isAi && "glitch"
+        isAi ? "bg-accent/80 hover:bg-accent/90 transition-colors" : "bg-muted"
       )}
     >
       <span className="font-mono">
-        {isAi ? '🤖 AI: ' : '👤 You: '}
+        {isAi ? '🤖 Tiara: ' : '👤 You: '}
         {message}
       </span>
     </div>

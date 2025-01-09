@@ -18,18 +18,39 @@ const Chatbot = () => {
   ]);
   const [isProcessing, setIsProcessing] = useState(false);
 
+  const generateResponse = async (userMessage: string) => {
+    // This is a simple response generation logic
+    const responses = [
+      "I understand you're interested in learning more about that. Let me explain...",
+      "That's an interesting question! Here's what I know...",
+      "I'd be happy to help you with that. Here's what you need to know...",
+      "Great question! Let me break this down for you...",
+      "I can definitely help you understand this better. Here's the key information..."
+    ];
+    
+    const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+    return `${randomResponse} (Regarding: "${userMessage}")`;
+  };
+
   const handleSendMessage = async (message: string) => {
     setIsProcessing(true);
     setMessages(prev => [...prev, { text: message, isAi: false }]);
 
-    // Simulate AI response
-    setTimeout(() => {
-      setMessages(prev => [...prev, {
-        text: `I processed your message: "${message}". This is a demo response. In a real implementation, this would connect to an AI service.`,
-        isAi: true
-      }]);
+    try {
+      const response = await generateResponse(message);
+      
+      setTimeout(() => {
+        setMessages(prev => [...prev, {
+          text: response,
+          isAi: true
+        }]);
+        setIsProcessing(false);
+      }, 1000);
+      
+    } catch (error) {
+      console.error('Error generating response:', error);
       setIsProcessing(false);
-    }, 1000);
+    }
   };
 
   return (
