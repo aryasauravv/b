@@ -33,14 +33,14 @@ What's a Butthole without a Turd?`;
       
       <div className="relative z-10 max-w-4xl mx-auto space-y-8">
         <div className="text-center mb-12">
-          <h1 className="text-6xl font-bold mb-8 glitch">TURD</h1>
+          <h1 className="text-6xl font-bold mb-8 glitch">Tiara AI</h1>
           <div className="typewriter terminal-cursor">
             {text}
           </div>
         </div>
 
         <div className="mt-12">
-          <h2 className="text-2xl font-bold mb-4 text-center glitch">Chat with Turd AI</h2>
+          <h2 className="text-2xl font-bold mb-4 text-center glitch">Chat with Tiara AI</h2>
           <Chatbot />
         </div>
       </div>
