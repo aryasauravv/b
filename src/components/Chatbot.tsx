@@ -12,7 +12,7 @@ interface Message {
 const Chatbot = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
-      text: "Hello! I'm the Turd Network AI assistant. How can I help you today?",
+      text: "Hello! I'm Tiara AI assistant. How can I help you today?",
       isAi: true
     }
   ]);
